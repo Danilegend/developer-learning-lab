@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import json
 import random
 from datetime import date
@@ -56,19 +57,16 @@ def save_history(history):
 # Select technology from roadmap
 # --------------------------------------------------
 
-def get_today_technology(roadmap):
-    """Determine today's technology from the weekly roadmap."""
+def get_today_technology(roadmap, challenge_date):
+    """Determine the technology for the selected date."""
 
-    today = date.today()
-
-    day_name = today.strftime("%A").lower()
+    day_name = challenge_date.strftime("%A").lower()
 
     rotation = roadmap["weekly_rotation"]
 
     technology = rotation.get(day_name)
 
     return technology
-
 
 # --------------------------------------------------
 # Select challenge
@@ -133,11 +131,12 @@ def choose_challenge(challenges, technology, history):
 def create_daily_file(
     technology,
     challenge,
-    history
+    history,
+    challenge_date
 ):
     """Create today's Markdown learning challenge."""
 
-    today = date.today().isoformat()
+    today = challenge_date.isoformat()
 
     DAILY_DIR.mkdir(
         parents=True,
@@ -217,6 +216,7 @@ Turn individual exercises into practical development experience.
     content = f"""# 🚀 Daily Developer Challenge
 
 **Date:** {today}
+**Challenge ID:** {challenge["id"]}
 
 ## 🎯 Focus
 
@@ -290,6 +290,35 @@ Practice the concepts above by implementing the challenge yourself.
 
 def main():
 
+    parser = argparse.ArgumentParser(
+        description="Generate the daily developer challenge."
+    )
+
+    parser.add_argument(
+        "--date",
+        dest="challenge_date",
+        help="Generate a challenge for a specific date (YYYY-MM-DD)."
+    )
+
+    args = parser.parse_args()
+
+    if args.challenge_date:
+        try:
+            challenge_day = date.fromisoformat(
+                args.challenge_date
+            )
+        except ValueError:
+            print(
+                "Invalid date. Use YYYY-MM-DD."
+            )
+            return
+    else:
+        challenge_day = date.today()
+
+    #today = challenge_day.isoformat()
+
+
+
     print("🚀 Developer Learning Lab")
     print("-------------------------")
 
@@ -304,7 +333,8 @@ def main():
     history = load_history()
 
     technology = get_today_technology(
-        roadmap
+        roadmap,
+	challenge_day
     )
 
     print(
@@ -320,7 +350,8 @@ def main():
     create_daily_file(
         technology,
         challenge,
-        history
+        history,
+	challenge_day
     )
 
 

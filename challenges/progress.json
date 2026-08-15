@@ -1,0 +1,55 @@
+{
+  "current_level": 1,
+  "level_name": "Foundation",
+  "total_challenges_completed": 2,
+  "completed_challenges": [
+    "linux-002",
+    "python-002"
+  ],
+  "technologies": {
+    "python": {
+      "completed": 1,
+      "total": 3
+    },
+    "javascript": {
+      "completed": 0,
+      "total": 2
+    },
+    "linux": {
+      "completed": 1,
+      "total": 2
+    },
+    "git": {
+      "completed": 0,
+      "total": 2
+    },
+    "sql": {
+      "completed": 0,
+      "total": 1
+    },
+    "networking": {
+      "completed": 0,
+      "total": 2
+    },
+    "react": {
+      "completed": 0,
+      "total": 2
+    },
+    "nodejs": {
+      "completed": 0,
+      "total": 2
+    },
+    "azure": {
+      "completed": 0,
+      "total": 2
+    },
+    "windows": {
+      "completed": 0,
+      "total": 2
+    },
+    "security": {
+      "completed": 0,
+      "total": 2
+    }
+  }
+}

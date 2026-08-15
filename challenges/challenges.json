@@ -1,0 +1,510 @@
+{
+  "python": [
+    {
+      "id": "python-001",
+      "title": "Python File Scanner",
+      "difficulty": "Beginner",
+      "objective": "Build a Python script that scans a directory and lists files larger than a specified size.",
+      "concepts": [
+        "pathlib",
+        "file handling",
+        "loops",
+        "functions"
+      ],
+      "task": [
+        "Ask the user for a directory path.",
+        "Scan the directory for files.",
+        "Find files larger than 10 MB.",
+        "Display the filename and size."
+      ],
+      "bonus": "Export the results to a CSV file."
+    },
+    {
+      "id": "python-002",
+      "title": "Python System Information Tool",
+      "difficulty": "Beginner",
+      "objective": "Create a command-line tool that displays useful system information.",
+      "concepts": [
+        "platform",
+        "os",
+        "functions",
+        "command-line applications"
+      ],
+      "task": [
+        "Display the operating system.",
+        "Display the hostname.",
+        "Display the Python version.",
+        "Display the current working directory."
+      ],
+      "bonus": "Format the output as a clean system report."
+    },
+    {
+      "id": "python-003",
+      "title": "Python Log Analyzer",
+      "difficulty": "Intermediate",
+      "objective": "Create a script that analyzes a log file and counts different types of events.",
+      "concepts": [
+        "file processing",
+        "strings",
+        "dictionaries",
+        "error handling"
+      ],
+      "task": [
+        "Read a log file.",
+        "Count INFO messages.",
+        "Count WARNING messages.",
+        "Count ERROR messages."
+      ],
+      "bonus": "Display the five most common error messages."
+    }
+  ],
+
+  "javascript": [
+    {
+      "id": "javascript-001",
+      "title": "Remove Duplicate Values",
+      "difficulty": "Beginner",
+      "objective": "Create a JavaScript function that removes duplicate values from an array.",
+      "concepts": [
+        "arrays",
+        "functions",
+        "Set",
+        "ES6"
+      ],
+      "task": [
+        "Create an array containing duplicate values.",
+        "Write a function that removes duplicates.",
+        "Return the unique values."
+      ],
+      "bonus": "Create a version that works with an array of objects."
+    },
+    {
+      "id": "javascript-002",
+      "title": "Async API Request",
+      "difficulty": "Intermediate",
+      "objective": "Create a JavaScript program that retrieves data from a public API.",
+      "concepts": [
+        "fetch",
+        "async/await",
+        "JSON",
+        "error handling"
+      ],
+      "task": [
+        "Send a request to a public API.",
+        "Parse the JSON response.",
+        "Display selected information.",
+        "Handle request errors."
+      ],
+      "bonus": "Add a retry mechanism."
+    }
+  ],
+
+  "linux": [
+    {
+      "id": "linux-001",
+      "title": "Linux Disk Usage Monitor",
+      "difficulty": "Beginner",
+      "objective": "Create a Bash script that reports filesystems using more than 80 percent disk space.",
+      "concepts": [
+        "Bash",
+        "df",
+        "shell variables",
+        "conditions"
+      ],
+      "task": [
+        "Use the df command.",
+        "Read filesystem usage.",
+        "Detect filesystems above 80 percent.",
+        "Display a warning."
+      ],
+      "bonus": "Write the warning to a log file."
+    },
+    {
+      "id": "linux-002",
+      "title": "Linux Process Investigation",
+      "difficulty": "Beginner",
+      "objective": "Investigate running processes using standard Linux commands.",
+      "concepts": [
+        "ps",
+        "top",
+        "grep",
+        "process management"
+      ],
+      "task": [
+        "List running processes.",
+        "Find the processes consuming the most CPU.",
+        "Find the processes consuming the most memory.",
+        "Identify a specific process by name."
+      ],
+      "bonus": "Create a Bash script that generates a process report."
+    }
+  ],
+
+  "git": [
+    {
+      "id": "git-001",
+      "title": "Feature Branch Workflow",
+      "difficulty": "Beginner",
+      "objective": "Practice a complete Git feature branch workflow.",
+      "concepts": [
+        "branches",
+        "commits",
+        "merge",
+        "remote repositories"
+      ],
+      "task": [
+        "Create a feature branch.",
+        "Make a change.",
+        "Commit the change.",
+        "Merge the branch into main.",
+        "Delete the feature branch."
+      ],
+      "bonus": "Repeat the exercise using a pull request."
+    }
+  ],
+
+  "sql": [
+    {
+      "id": "sql-001",
+      "title": "SQL JOIN Practice",
+      "difficulty": "Beginner",
+      "objective": "Practice retrieving related information from multiple database tables.",
+      "concepts": [
+        "SELECT",
+        "INNER JOIN",
+        "LEFT JOIN",
+        "WHERE"
+      ],
+      "task": [
+        "Create two related tables.",
+        "Insert sample data.",
+        "Write an INNER JOIN query.",
+        "Write a LEFT JOIN query."
+      ],
+      "bonus": "Add a third table and perform a three-table JOIN."
+    }
+  ],
+"networking": [
+  {
+    "id": "networking-001",
+    "title": "Linux Network Investigation",
+    "difficulty": "Beginner",
+    "objective": "Use Linux networking tools to investigate the current network configuration.",
+    "concepts": [
+      "IP addresses",
+      "DNS",
+      "routing",
+      "network interfaces"
+    ],
+    "task": [
+      "Display network interfaces.",
+      "Find the machine's IP address.",
+      "Display the routing table.",
+      "Test DNS resolution.",
+      "Test connectivity to a remote host."
+    ],
+    "bonus": "Document the complete network path using traceroute."
+  }
+],
+
+"react": [
+  {
+    "id": "react-001",
+    "title": "React Component Practice",
+    "difficulty": "Beginner",
+    "objective": "Create a reusable React component that displays information about a developer.",
+    "concepts": [
+      "components",
+      "JSX",
+      "props",
+      "component composition"
+    ],
+    "task": [
+      "Create a DeveloperCard component.",
+      "Accept name and role as props.",
+      "Display the information using JSX.",
+      "Render multiple DeveloperCard components."
+    ],
+    "bonus": "Add a technology list to each developer card."
+  },
+  {
+    "id": "react-002",
+    "title": "React State Counter",
+    "difficulty": "Beginner",
+    "objective": "Build an interactive counter using React state.",
+    "concepts": [
+      "useState",
+      "event handlers",
+      "state updates",
+      "components"
+    ],
+    "task": [
+      "Create a counter component.",
+      "Add an increment button.",
+      "Add a decrement button.",
+      "Display the current value."
+    ],
+    "bonus": "Add a reset button and prevent the counter from going below zero."
+  }
+],
+
+"nodejs": [
+  {
+    "id": "nodejs-001",
+    "title": "Build a Basic Express Server",
+    "difficulty": "Beginner",
+    "objective": "Create a simple Express server with basic HTTP routes.",
+    "concepts": [
+      "Node.js",
+      "Express",
+      "HTTP",
+      "routing"
+    ],
+    "task": [
+      "Initialize a Node.js project.",
+      "Install Express.",
+      "Create an Express server.",
+      "Create a GET / route.",
+      "Create a GET /api/status route.",
+      "Return JSON from the API route."
+    ],
+    "bonus": "Add a /api/health endpoint that returns the server status."
+  },
+  {
+    "id": "nodejs-002",
+    "title": "Create a REST API",
+    "difficulty": "Intermediate",
+    "objective": "Build a small REST API for managing developer projects.",
+    "concepts": [
+      "REST",
+      "Express",
+      "HTTP methods",
+      "JSON"
+    ],
+    "task": [
+      "Create GET /projects.",
+      "Create GET /projects/:id.",
+      "Create POST /projects.",
+      "Create DELETE /projects/:id.",
+      "Return appropriate HTTP status codes."
+    ],
+    "bonus": "Add PUT /projects/:id to update an existing project."
+  }
+],
+
+"azure": [
+  {
+    "id": "azure-001",
+    "title": "Azure Resource Group Planning",
+    "difficulty": "Beginner",
+    "objective": "Design a basic Azure environment using resource groups and common cloud resources.",
+    "concepts": [
+      "Azure",
+      "resource groups",
+      "virtual machines",
+      "storage",
+      "cloud architecture"
+    ],
+    "task": [
+      "Create a diagram of a simple Azure environment.",
+      "Define an Azure resource group.",
+      "Choose where a virtual machine would be deployed.",
+      "Choose an appropriate storage service.",
+      "Document why each resource is needed."
+    ],
+    "bonus": "Create the environment using Azure CLI commands."
+  },
+  {
+    "id": "azure-002",
+    "title": "Azure CLI Resource Investigation",
+    "difficulty": "Intermediate",
+    "objective": "Use Azure CLI to investigate resources in an Azure environment.",
+    "concepts": [
+      "Azure CLI",
+      "resource groups",
+      "subscriptions",
+      "JSON output"
+    ],
+    "task": [
+      "Check the current Azure subscription.",
+      "List resource groups.",
+      "List resources inside a resource group.",
+      "Display resource information as JSON."
+    ],
+    "bonus": "Create a Bash script that generates an Azure resource report."
+  }
+],
+
+"windows": [
+  {
+    "id": "windows-001",
+    "title": "Windows PowerShell System Report",
+    "difficulty": "Beginner",
+    "objective": "Create a PowerShell script that generates a basic Windows system report.",
+    "concepts": [
+      "PowerShell",
+      "Windows",
+      "system information",
+      "objects"
+    ],
+    "task": [
+      "Display the computer name.",
+      "Display the operating system.",
+      "Display the PowerShell version.",
+      "Display available memory.",
+      "Display disk information."
+    ],
+    "bonus": "Export the report to a CSV file."
+  },
+  {
+    "id": "windows-002",
+    "title": "Active Directory User Investigation",
+    "difficulty": "Intermediate",
+    "objective": "Practice investigating users and groups in an Active Directory environment.",
+    "concepts": [
+      "Active Directory",
+      "PowerShell",
+      "users",
+      "groups",
+      "identity management"
+    ],
+    "task": [
+      "Find a user account.",
+      "Display the user's groups.",
+      "Find members of a security group.",
+      "Identify disabled user accounts."
+    ],
+    "bonus": "Create a PowerShell report listing disabled accounts."
+  }
+],
+
+"security": [
+  {
+    "id": "security-001",
+    "title": "Linux File Permission Audit",
+    "difficulty": "Beginner",
+    "objective": "Investigate Linux file permissions and identify potentially risky configurations.",
+    "concepts": [
+      "Linux permissions",
+      "chmod",
+      "ownership",
+      "security auditing"
+    ],
+    "task": [
+      "Create a test directory.",
+      "Create several test files.",
+      "Inspect their permissions using ls -l.",
+      "Change file permissions using chmod.",
+      "Identify which files are writable by everyone."
+    ],
+    "bonus": "Write a Bash script that reports world-writable files."
+  },
+  {
+    "id": "security-002",
+    "title": "Password Security Investigation",
+    "difficulty": "Beginner",
+    "objective": "Learn how password security is improved through strong authentication practices.",
+    "concepts": [
+      "authentication",
+      "password policies",
+      "MFA",
+      "account security"
+    ],
+    "task": [
+      "Research characteristics of strong passwords.",
+      "Explain why password reuse is dangerous.",
+      "Explain how MFA improves account security.",
+      "Design a basic password policy for a small company."
+    ],
+    "bonus": "Create a security checklist for new employee accounts."
+  }
+],
+
+"networking": [
+  {
+    "id": "networking-001",
+    "title": "Linux Network Investigation",
+    "difficulty": "Beginner",
+    "objective": "Use Linux networking tools to investigate the current network configuration.",
+    "concepts": [
+      "IP addresses",
+      "DNS",
+      "routing",
+      "network interfaces"
+    ],
+    "task": [
+      "Display network interfaces.",
+      "Find the machine's IP address.",
+      "Display the routing table.",
+      "Test DNS resolution.",
+      "Test connectivity to a remote host."
+    ],
+    "bonus": "Document the complete network path using traceroute."
+  },
+  {
+    "id": "networking-002",
+    "title": "DNS Troubleshooting Lab",
+    "difficulty": "Intermediate",
+    "objective": "Investigate and troubleshoot common DNS resolution problems.",
+    "concepts": [
+      "DNS",
+      "nslookup",
+      "dig",
+      "resolv.conf",
+      "DNS records"
+    ],
+    "task": [
+      "Use dig to query a domain.",
+      "Identify the DNS server being used.",
+      "Query an A record.",
+      "Query an MX record.",
+      "Compare results from two DNS servers."
+    ],
+    "bonus": "Document a troubleshooting procedure for a DNS server that is not responding."
+  }
+],
+
+"git": [
+  {
+    "id": "git-001",
+    "title": "Feature Branch Workflow",
+    "difficulty": "Beginner",
+    "objective": "Practice a complete Git feature branch workflow.",
+    "concepts": [
+      "branches",
+      "commits",
+      "merge",
+      "remote repositories"
+    ],
+    "task": [
+      "Create a feature branch.",
+      "Make a change.",
+      "Commit the change.",
+      "Merge the branch into main.",
+      "Delete the feature branch."
+    ],
+    "bonus": "Repeat the exercise using a pull request."
+  },
+  {
+    "id": "git-002",
+    "title": "Git Conflict Resolution",
+    "difficulty": "Intermediate",
+    "objective": "Practice resolving a Git merge conflict safely.",
+    "concepts": [
+      "merge conflicts",
+      "branches",
+      "git merge",
+      "conflict resolution"
+    ],
+    "task": [
+      "Create two branches.",
+      "Modify the same line in both branches.",
+      "Attempt to merge the branches.",
+      "Identify the conflict.",
+      "Resolve the conflict.",
+      "Complete the merge."
+    ],
+    "bonus": "Practice the same workflow using a GitHub pull request."
+  }
+]
+}

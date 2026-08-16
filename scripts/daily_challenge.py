@@ -57,17 +57,14 @@ def save_history(history):
 # Select technology from roadmap
 # --------------------------------------------------
 
-def get_today_technology(roadmap, challenge_date):
-    """Determine the technology for the selected date."""
+def get_today_technology(roadmap, challenge_day):
+    """Determine the technology for the requested date."""
 
-    day_name = challenge_date.strftime("%A").lower()
+    day_name = challenge_day.strftime("%A").lower()
 
     rotation = roadmap["weekly_rotation"]
 
-    technology = rotation.get(day_name)
-
-    return technology
-
+    return rotation.get(day_name)
 # --------------------------------------------------
 # Select challenge
 # --------------------------------------------------
@@ -132,11 +129,11 @@ def create_daily_file(
     technology,
     challenge,
     history,
-    challenge_date
+    challenge_day
 ):
     """Create today's Markdown learning challenge."""
 
-    today = challenge_date.isoformat()
+    today = challenge_day.isoformat()
 
     DAILY_DIR.mkdir(
         parents=True,

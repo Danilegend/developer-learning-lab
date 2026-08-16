@@ -344,6 +344,38 @@ def main():
         ]
     )
 
+# --------------------------------------------------
+# Git automation
+# --------------------------------------------------
+
+git_automation_script = (
+    BASE_DIR
+    / "scripts"
+    / "git_automation.py"
+)
+
+git_commit_message = (
+    f"feat: complete {challenge_id} challenge"
+)
+
+try:
+
+    subprocess.run(
+        [
+            "python3",
+            str(git_automation_script),
+            git_commit_message
+        ],
+        check=True
+    )
+
+except subprocess.CalledProcessError:
+
+    print()
+    print(
+        "⚠️ Challenge completed, "
+        "but Git automation failed."
+    )
 
 # --------------------------------------------------
 # Program entry point

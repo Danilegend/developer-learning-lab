@@ -15,6 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 CHALLENGES_FILE = BASE_DIR / "challenges" / "challenges.json"
 ROADMAP_FILE = BASE_DIR / "challenges" / "roadmap.json"
+PROGRESS_FILE = BASE_DIR / "challenges" / "progress.json"
 
 DAILY_DIR = BASE_DIR / "daily"
 HISTORY_FILE = DAILY_DIR / ".challenge_history.json"
@@ -69,8 +70,12 @@ def get_today_technology(roadmap, challenge_day):
 # Select challenge
 # --------------------------------------------------
 
-def choose_challenge(challenges, technology, history):
-    """Choose an unused challenge for today's technology."""
+def choose_challenge(
+    challenges,
+    technology,
+    history,
+    completed_ids
+):
 
     if technology == "project":
 
@@ -80,7 +85,9 @@ def choose_challenge(challenges, technology, history):
 
     if technology not in challenges:
 
-        print(f"No challenges found for technology: {technology}")
+        print(
+            f"No challenges found for technology: {technology}"
+        )
 
         return None
 
@@ -88,7 +95,12 @@ def choose_challenge(challenges, technology, history):
 
     for challenge in challenges[technology]:
 
-        if challenge["id"] not in history:
+        challenge_id = challenge["id"]
+
+        if (
+            challenge_id not in history
+            and challenge_id not in completed_ids
+        ):
 
             available.append(challenge)
 
@@ -110,16 +122,25 @@ def choose_challenge(challenges, technology, history):
             for challenge in challenges[technology]
         }
 
-        history[:] = [
-            challenge_id
+        history[:] = [challenge_id
             for challenge_id in history
-            if challenge_id not in technology_ids
+            if challenge_id not in technology_ids]
+
+        available = [
+            challenge
+	    for challenge in challenges[technology]
+	    if challenge["id"] not in completed_ids
         ]
 
-        available = challenges[technology]
+    if not available:
+
+        print(
+            f"🎉 All {technology} challenges are completed!"
+        )
+
+        return None
 
     return random.choice(available)
-
 
 # --------------------------------------------------
 # Create daily challenge
@@ -329,6 +350,14 @@ def main():
 
     history = load_history()
 
+    progress = load_json(
+	 PROGRESS_FILE
+    )
+
+    completed_ids = set(
+	 progress["completed_challenges"]
+    )
+
     technology = get_today_technology(
         roadmap,
 	challenge_day
@@ -341,7 +370,8 @@ def main():
     challenge = choose_challenge(
         challenges,
         technology,
-        history
+        history,
+        completed_ids
     )
 
     create_daily_file(

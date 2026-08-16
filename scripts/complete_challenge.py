@@ -27,13 +27,13 @@ DAILY_DIR = BASE_DIR / "daily"
 
 def load_json(file_path):
     """Load a JSON file."""
-
     with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
 def save_json(file_path, data):
     """Save data as formatted JSON."""
+    file_path.parent.mkdir(parents=True, exist_ok=True)
 
     with open(file_path, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=2)
@@ -48,9 +48,7 @@ def find_challenge(challenges, challenge_id):
     """Find a challenge by its ID."""
 
     for technology, challenge_list in challenges.items():
-
         for challenge in challenge_list:
-
             if challenge["id"] == challenge_id:
                 return technology, challenge
 
@@ -87,12 +85,10 @@ def main():
             )
 
         except ValueError:
-
             print("Invalid date. Use YYYY-MM-DD.")
             return
 
     else:
-
         challenge_day = date.today()
 
     today = challenge_day.isoformat()
@@ -104,11 +100,9 @@ def main():
     daily_file = DAILY_DIR / f"{today}.md"
 
     if not daily_file.exists():
-
         print(
             f"No daily challenge found for {today}."
         )
-
         return
 
     # --------------------------------------------------
@@ -124,27 +118,21 @@ def main():
     )
 
     if COMPLETIONS_FILE.exists():
-
         completions = load_json(
             COMPLETIONS_FILE
         )
-
     else:
-
         completions = []
 
     # --------------------------------------------------
-    # Load evidence
+    # Load learning evidence
     # --------------------------------------------------
 
     if EVIDENCE_FILE.exists():
-
         evidence = load_json(
             EVIDENCE_FILE
         )
-
     else:
-
         evidence = []
 
     # --------------------------------------------------
@@ -163,11 +151,9 @@ def main():
     )
 
     if match:
-
         challenge_id = match.group(1)
 
     if not challenge_id:
-
         print(
             "Could not identify today's challenge ID."
         )
@@ -192,11 +178,9 @@ def main():
     )
 
     if not challenge:
-
         print(
             f"Challenge not found: {challenge_id}"
         )
-
         return
 
     # --------------------------------------------------
@@ -208,12 +192,10 @@ def main():
     ]
 
     if challenge_id in completed:
-
         print(
             f"Challenge already completed: "
             f"{challenge_id}"
         )
-
         return
 
     # --------------------------------------------------
@@ -299,7 +281,7 @@ def main():
     )
 
     # --------------------------------------------------
-    # Update dashboard
+    # Update dashboard automatically
     # --------------------------------------------------
 
     dashboard_script = (

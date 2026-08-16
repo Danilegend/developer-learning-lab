@@ -8,13 +8,22 @@ from datetime import date
 from pathlib import Path
 
 
+# --------------------------------------------------
+# Project paths
+# --------------------------------------------------
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 CHALLENGES_FILE = BASE_DIR / "challenges" / "challenges.json"
 PROGRESS_FILE = BASE_DIR / "challenges" / "progress.json"
 COMPLETIONS_FILE = BASE_DIR / "challenges" / "completions.json"
+EVIDENCE_FILE = BASE_DIR / "evidence" / "evidence.json"
 DAILY_DIR = BASE_DIR / "daily"
 
+
+# --------------------------------------------------
+# JSON helpers
+# --------------------------------------------------
 
 def load_json(file_path):
     """Load a JSON file."""
@@ -31,16 +40,26 @@ def save_json(file_path, data):
         file.write("\n")
 
 
+# --------------------------------------------------
+# Challenge lookup
+# --------------------------------------------------
+
 def find_challenge(challenges, challenge_id):
     """Find a challenge by its ID."""
 
     for technology, challenge_list in challenges.items():
+
         for challenge in challenge_list:
+
             if challenge["id"] == challenge_id:
                 return technology, challenge
 
     return None, None
 
+
+# --------------------------------------------------
+# Main program
+# --------------------------------------------------
 
 def main():
 
@@ -79,7 +98,7 @@ def main():
     today = challenge_day.isoformat()
 
     # --------------------------------------------------
-    # Find daily challenge file
+    # Find daily challenge
     # --------------------------------------------------
 
     daily_file = DAILY_DIR / f"{today}.md"
@@ -113,6 +132,20 @@ def main():
     else:
 
         completions = []
+
+    # --------------------------------------------------
+    # Load evidence
+    # --------------------------------------------------
+
+    if EVIDENCE_FILE.exists():
+
+        evidence = load_json(
+            EVIDENCE_FILE
+        )
+
+    else:
+
+        evidence = []
 
     # --------------------------------------------------
     # Read daily challenge
@@ -216,7 +249,26 @@ def main():
     )
 
     # --------------------------------------------------
-    # Save data
+    # Record learning evidence
+    # --------------------------------------------------
+
+    evidence_record = {
+        "challenge_id": challenge_id,
+        "technology": technology,
+        "date": today,
+        "title": challenge["title"],
+        "difficulty": challenge["difficulty"],
+        "status": "completed",
+        "objective": challenge["objective"],
+        "concepts": challenge["concepts"]
+    }
+
+    evidence.append(
+        evidence_record
+    )
+
+    # --------------------------------------------------
+    # Save progress
     # --------------------------------------------------
 
     save_json(
@@ -224,21 +276,45 @@ def main():
         progress
     )
 
+    # --------------------------------------------------
+    # Save completion history
+    # --------------------------------------------------
+
     save_json(
         COMPLETIONS_FILE,
         completions
     )
 
     # --------------------------------------------------
+    # Save learning evidence
+    # --------------------------------------------------
+
+    save_json(
+        EVIDENCE_FILE,
+        evidence
+    )
+
+    print(
+        "📝 Learning evidence recorded."
+    )
+
+    # --------------------------------------------------
     # Update dashboard
     # --------------------------------------------------
 
-    dashboard_script = BASE_DIR / "scripts" / "dashboard.py"
+    dashboard_script = (
+        BASE_DIR
+        / "scripts"
+        / "dashboard.py"
+    )
 
     try:
 
         subprocess.run(
-            ["python3", str(dashboard_script)],
+            [
+                "python3",
+                str(dashboard_script)
+            ],
             check=True
         )
 
@@ -249,31 +325,9 @@ def main():
     except subprocess.CalledProcessError:
 
         print(
-            "⚠️ Challenge completed, but dashboard update failed."
+            "⚠️ Challenge completed, "
+            "but dashboard update failed."
         )
-
-    # --------------------------------------------------
-    # Display result
-    # --------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# --------------------------------------------------
-# Display result
-# --------------------------------------------------
 
     # --------------------------------------------------
     # Display result
@@ -309,5 +363,10 @@ def main():
     )
 
 
+# --------------------------------------------------
+# Program entry point
+# --------------------------------------------------
+
 if __name__ == "__main__":
     main()
+

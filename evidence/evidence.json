@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "challenge_id": "linux-001",
+    "technology": "linux",
+    "date": "2026-08-18",
+    "title": "Linux Disk Usage Monitor",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Create a Bash script that reports filesystems using more than 80 percent disk space.",
+    "concepts": [
+      "Bash",
+      "df",
+      "shell variables",
+      "conditions"
+    ]
+  }
+]

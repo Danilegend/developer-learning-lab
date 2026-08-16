@@ -3,5 +3,10 @@
     "challenge_id": "linux-002",
     "technology": "linux",
     "date": "2026-08-15"
+  },
+  {
+    "challenge_id": "linux-001",
+    "technology": "linux",
+    "date": "2026-08-18"
   }
 ]

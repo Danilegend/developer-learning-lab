@@ -1,9 +1,10 @@
 {
   "current_level": 1,
   "level_name": "Foundation",
-  "total_challenges_completed": 1,
+  "total_challenges_completed": 2,
   "completed_challenges": [
-    "linux-002"
+    "linux-002",
+    "linux-001"
   ],
   "technologies": {
     "python": {
@@ -15,7 +16,7 @@
       "total": 2
     },
     "linux": {
-      "completed": 1,
+      "completed": 2,
       "total": 2
     },
     "git": {

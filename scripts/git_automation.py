@@ -109,9 +109,17 @@ def push_to_github():
 
 def main():
 
-    commit_message = (
-        "chore: update developer learning progress"
-    )
+    if len(sys.argv) > 1:
+
+        commit_message = " ".join(
+            sys.argv[1:]
+        )
+
+    else:
+
+        commit_message = (
+            "chore: update developer learning progress"
+        )
 
     print()
     print("======================================")
@@ -127,20 +135,26 @@ def main():
     print(commit_message)
 
     if not create_commit(commit_message):
+
         print()
         print("ℹ️ Nothing was committed.")
+
         return
 
     if not push_to_github():
+
         print()
         print(
             "⚠️ Commit created, "
             "but GitHub push failed."
         )
+
         sys.exit(1)
 
     print()
-    print("🎉 Git automation completed successfully!")
+    print(
+        "🎉 Git automation completed successfully!"
+    )
 
 
 if __name__ == "__main__":

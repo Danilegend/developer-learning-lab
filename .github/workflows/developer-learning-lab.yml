@@ -30,7 +30,7 @@ jobs:
           python3 -m py_compile scripts/git_automation.py
 
       - name: Install test dependencies
-        run: python3 -m pip install pytest
+        run: python3 -m pip install -r requirements-dev.txt
 
       - name: Run tests
         run: python3 -m pytest -v

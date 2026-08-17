@@ -54,6 +54,26 @@ def main():
             "challenges.json is empty."
         )
 
+    challenge_ids = {
+        challenge["id"]
+        for challenges in data["challenges"].values()
+        for challenge in challenges
+    }
+
+    completed_ids = set(
+        data["progress"]["completed_challenges"]
+    )
+
+    unknown_completed = (
+        completed_ids - challenge_ids
+    )
+
+    if unknown_completed:
+        raise ValueError(
+            "Unknown completed challenges: "
+            f"{sorted(unknown_completed)}"
+        )
+
     required_progress_keys = {
         "completed_challenges",
         "total_challenges_completed",

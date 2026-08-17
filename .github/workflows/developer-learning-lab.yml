@@ -43,3 +43,9 @@ jobs:
 
       - name: Generate dashboard
         run: python3 scripts/dashboard.py
+
+      - name: Verify dashboard
+        run: |
+          test -f dashboard/index.html
+          test -s dashboard/index.html
+          grep -q "Developer Learning Lab" dashboard/index.html

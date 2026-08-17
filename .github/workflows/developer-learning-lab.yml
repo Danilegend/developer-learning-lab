@@ -34,3 +34,6 @@ jobs:
 
       - name: Generate dashboard
         run: python3 scripts/dashboard.py
+
+      - name: Verify generated files
+        run: git diff --exit-code

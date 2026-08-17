@@ -230,6 +230,61 @@ def main():
         completion_record
     )
 
+
+
+    # --------------------------------------------------
+    # Git automation
+    # --------------------------------------------------
+
+    git_automation_script = (
+        BASE_DIR
+        / "scripts"
+        / "git_automation.py"
+    )
+
+    git_commit_message = (
+        f"feat: complete {challenge_id} challenge"
+    )
+
+    try:
+
+        result = subprocess.run(
+            [
+                "python3",
+                str(git_automation_script),
+                git_commit_message
+            ],
+            check=True,
+            capture_output=True,
+            text=True
+        )
+
+        print(result.stdout)
+
+        commit_hash = None
+
+        for line in result.stdout.splitlines():
+
+            if line.startswith("🔗 Commit:"):
+
+                commit_hash = line.split(
+                    ":", 1
+                )[1].strip()
+
+                break
+
+        print(
+            f"📌 Recorded commit hash: {commit_hash}"
+        )
+
+    except subprocess.CalledProcessError:
+
+        print()
+        print(
+            "⚠️ Challenge completed, "
+            "but Git automation failed."
+        )
+
     # --------------------------------------------------
     # Record learning evidence
     # --------------------------------------------------
@@ -344,38 +399,6 @@ def main():
         ]
     )
 
-# --------------------------------------------------
-# Git automation
-# --------------------------------------------------
-
-git_automation_script = (
-    BASE_DIR
-    / "scripts"
-    / "git_automation.py"
-)
-
-git_commit_message = (
-    f"feat: complete {challenge_id} challenge"
-)
-
-try:
-
-    subprocess.run(
-        [
-            "python3",
-            str(git_automation_script),
-            git_commit_message
-        ],
-        check=True
-    )
-
-except subprocess.CalledProcessError:
-
-    print()
-    print(
-        "⚠️ Challenge completed, "
-        "but Git automation failed."
-    )
 
 # --------------------------------------------------
 # Program entry point
@@ -383,4 +406,3 @@ except subprocess.CalledProcessError:
 
 if __name__ == "__main__":
     main()
-

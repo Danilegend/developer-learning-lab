@@ -103,6 +103,19 @@ def main():
             f"completed={sorted(completed_ids)}"
         )
 
+    evidence_ids = {
+        record["challenge_id"]
+        for record in data["evidence"]
+    }
+
+    if evidence_ids != completed_ids:
+        raise ValueError(
+            "Learning evidence does not match "
+            "completed challenges: "
+            f"evidence={sorted(evidence_ids)}, "
+            f"completed={sorted(completed_ids)}"
+        )
+
     required_progress_keys = {
         "completed_challenges",
         "total_challenges_completed",

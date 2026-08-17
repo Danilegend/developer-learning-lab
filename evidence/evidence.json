@@ -13,5 +13,20 @@
       "shell variables",
       "conditions"
     ]
+  },
+  {
+    "challenge_id": "python-002",
+    "technology": "python",
+    "date": "2026-08-17",
+    "title": "Python System Information Tool",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Create a command-line tool that displays useful system information.",
+    "concepts": [
+      "platform",
+      "os",
+      "functions",
+      "command-line applications"
+    ]
   }
 ]

@@ -1,14 +1,15 @@
 {
   "current_level": 1,
   "level_name": "Foundation",
-  "total_challenges_completed": 2,
+  "total_challenges_completed": 3,
   "completed_challenges": [
     "linux-002",
-    "linux-001"
+    "linux-001",
+    "python-002"
   ],
   "technologies": {
     "python": {
-      "completed": 0,
+      "completed": 1,
       "total": 3
     },
     "javascript": {

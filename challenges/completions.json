@@ -8,5 +8,10 @@
     "challenge_id": "linux-001",
     "technology": "linux",
     "date": "2026-08-18"
+  },
+  {
+    "challenge_id": "python-002",
+    "technology": "python",
+    "date": "2026-08-17"
   }
 ]

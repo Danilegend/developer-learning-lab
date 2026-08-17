@@ -283,11 +283,12 @@ def generate_dashboard():
     # Completion history
     # --------------------------------------------------
 
-    completion_rows = ""
+    completion_rows = []
 
     for completion in reversed(completions):
 
-        completion_rows += f"""
+        completion_rows.append(
+            f"""
         <tr>
             <td>{completion.get("date", "")}</td>
 
@@ -308,6 +309,7 @@ def generate_dashboard():
             </td>
         </tr>
         """
+        )
 
     if not completion_rows:
 

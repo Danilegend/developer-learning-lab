@@ -297,7 +297,8 @@ def main():
         "difficulty": challenge["difficulty"],
         "status": "completed",
         "objective": challenge["objective"],
-        "concepts": challenge["concepts"]
+        "concepts": challenge["concepts"],
+        "git_commit": commit_hash
     }
 
     evidence.append(

@@ -37,3 +37,6 @@ jobs:
 
       - name: Verify generated files
         run: git diff --exit-code
+
+      - name: Validate project data
+        run: python3 scripts/validate_project.py

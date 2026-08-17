@@ -90,6 +90,19 @@ def main():
             f"{recorded_total}"
         )
 
+    completion_ids = {
+        completion["challenge_id"]
+        for completion in data["completions"]
+    }
+
+    if completion_ids != completed_ids:
+        raise ValueError(
+            "Completion history does not match "
+            "completed challenges: "
+            f"history={sorted(completion_ids)}, "
+            f"completed={sorted(completed_ids)}"
+        )
+
     required_progress_keys = {
         "completed_challenges",
         "total_challenges_completed",

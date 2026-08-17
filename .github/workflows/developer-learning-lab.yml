@@ -30,4 +30,4 @@ jobs:
           python3 -m py_compile scripts/git_automation.py
 
       - name: Check Git whitespace
-         run: git diff --check
+        run: git diff --check

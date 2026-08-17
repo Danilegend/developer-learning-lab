@@ -86,7 +86,20 @@ def create_commit(message):
 
     print("✅ Commit created.")
 
-    return True
+    commit_result = run_git(
+        ["git", "rev-parse", "HEAD"]
+    )
+
+    if commit_result is None:
+        return False
+
+    commit_hash = commit_result.stdout.strip()
+
+    print(
+        f"🔗 Commit: {commit_hash}"
+    )
+
+    return commit_hash
 
 
 def push_to_github():
@@ -134,7 +147,9 @@ def main():
     print("Commit message:")
     print(commit_message)
 
-    if not create_commit(commit_message):
+    commit_hash = create_commit(commit_message)
+
+    if not commit_hash:
 
         print()
         print("ℹ️ Nothing was committed.")

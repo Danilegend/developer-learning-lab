@@ -74,6 +74,22 @@ def main():
             f"{sorted(unknown_completed)}"
         )
 
+    completed_count = len(
+        data["progress"]["completed_challenges"]
+    )
+
+    recorded_total = (
+        data["progress"]["total_challenges_completed"]
+    )
+
+    if completed_count != recorded_total:
+        raise ValueError(
+            "Completed challenge count mismatch: "
+            f"{completed_count} IDs but "
+            f"total_challenges_completed is "
+            f"{recorded_total}"
+        )
+
     required_progress_keys = {
         "completed_challenges",
         "total_challenges_completed",

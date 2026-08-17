@@ -29,6 +29,9 @@ jobs:
           python3 -m py_compile scripts/daily_challenge.py
           python3 -m py_compile scripts/git_automation.py
 
+      - name: Validate project data
+        run: python3 scripts/validate_project.py
+
       - name: Check Git whitespace
         run: git diff --check
 

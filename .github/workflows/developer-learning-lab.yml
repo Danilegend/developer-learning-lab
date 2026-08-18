@@ -50,6 +50,11 @@ jobs:
       - name: Validate project data
         run: python3 scripts/validate_project.py
 
+      - name: Verify generated files are clean
+        run: |
+          git diff --check
+          git diff --exit-code
+
       - name: Generate dashboard
         run: python3 scripts/dashboard.py
 

@@ -1,0 +1,54 @@
+name: Daily Developer Challenge
+
+on:
+  schedule:
+    # 06:00 UTC every day
+    - cron: "0 6 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-challenge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate daily challenge
+        run: python3 scripts/daily_challenge.py
+
+      - name: Generate dashboard
+        run: python3 scripts/dashboard.py
+
+      - name: Validate project
+        run: python3 scripts/validate_project.py
+
+      - name: Run tests
+        run: |
+          python3 -m pip install -r requirements-dev.txt
+          python3 -m pytest -v
+
+      - name: Check Git whitespace
+        run: git diff --check
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add daily/ dashboard/index.html
+            git commit -m "chore: generate daily developer challenge"
+            git push
+          fi

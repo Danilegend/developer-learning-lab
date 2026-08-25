@@ -77,7 +77,7 @@ def choose_challenge(
     completed_ids
 ):
 
-    if technology == "project":
+    if technology == "project" or challenge is None:
 
         print("Today's focus is a project/review day.")
 

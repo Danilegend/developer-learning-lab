@@ -77,7 +77,7 @@ def choose_challenge(
     completed_ids
 ):
 
-    if technology == "project" or challenge is None:
+    if technology == "project":
 
         print("Today's focus is a project/review day.")
 
@@ -177,7 +177,7 @@ def create_daily_file(
     # Project / review day
     # --------------------------------------------------
 
-    if technology == "project":
+    if technology == "project" or challenge is None:
 
         content = f"""# 🚀 Daily Developer Project Day
 

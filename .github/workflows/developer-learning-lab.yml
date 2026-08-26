@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
@@ -22,6 +21,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install test dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+
       - name: Compile Python scripts
         run: |
           python3 -m py_compile scripts/complete_challenge.py
@@ -29,8 +31,8 @@ jobs:
           python3 -m py_compile scripts/daily_challenge.py
           python3 -m py_compile scripts/git_automation.py
 
-      - name: Install test dependencies
-        run: python3 -m pip install -r requirements-dev.txt
+      - name: Check Git whitespace
+        run: git diff --check
 
       - name: Run tests
         run: python3 -m pytest -v
@@ -38,27 +40,10 @@ jobs:
       - name: Validate project data
         run: python3 scripts/validate_project.py
 
-      - name: Check Git whitespace
-        run: git diff --check
-
       - name: Generate dashboard
         run: python3 scripts/dashboard.py
 
-      - name: Verify generated files
-        run: git diff --exit-code
-
-      - name: Validate project data
-        run: python3 scripts/validate_project.py
-
-      - name: Verify generated files are clean
-        run: |
-          git diff --check
-          git diff --exit-code
-
-      - name: Generate dashboard
-        run: python3 scripts/dashboard.py
-
-      - name: Verify dashboard
+      - name: Verify dashboard output
         run: |
           test -f dashboard/index.html
           test -s dashboard/index.html

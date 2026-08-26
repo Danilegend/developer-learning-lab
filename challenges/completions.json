@@ -13,5 +13,10 @@
     "challenge_id": "python-002",
     "technology": "python",
     "date": "2026-08-17"
+  },
+  {
+    "challenge_id": "javascript-001",
+    "technology": "javascript",
+    "date": "2026-08-26"
   }
 ]

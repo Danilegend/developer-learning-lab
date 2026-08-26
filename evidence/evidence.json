@@ -1,47 +1,63 @@
 [
-    {
-        "challenge_id": "linux-001",
-        "technology": "linux",
-        "date": "2026-08-18",
-        "title": "Linux Disk Usage Monitor",
-        "difficulty": "Beginner",
-        "status": "completed",
-        "objective": "Create a Bash script that reports filesystems using more than 80 percent disk space.",
-        "concepts": [
-            "Bash",
-            "df",
-            "shell variables",
-            "conditions"
-        ]
-    },
-    {
-        "challenge_id": "python-002",
-        "technology": "python",
-        "date": "2026-08-17",
-        "title": "Python System Information Tool",
-        "difficulty": "Beginner",
-        "status": "completed",
-        "objective": "Create a command-line tool that displays useful system information.",
-        "concepts": [
-            "platform",
-            "os",
-            "functions",
-            "command-line applications"
-        ]
-    },
-    {
-        "challenge_id": "linux-002",
-        "technology": "linux",
-        "date": "2026-08-15",
-        "title": "Linux Process Investigation",
-        "difficulty": "Beginner",
-        "status": "completed",
-        "objective": "Investigate running processes using standard Linux commands.",
-        "concepts": [
-            "ps",
-            "top",
-            "grep",
-            "process management"
-        ]
-    }
+  {
+    "challenge_id": "linux-001",
+    "technology": "linux",
+    "date": "2026-08-18",
+    "title": "Linux Disk Usage Monitor",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Create a Bash script that reports filesystems using more than 80 percent disk space.",
+    "concepts": [
+      "Bash",
+      "df",
+      "shell variables",
+      "conditions"
+    ]
+  },
+  {
+    "challenge_id": "python-002",
+    "technology": "python",
+    "date": "2026-08-17",
+    "title": "Python System Information Tool",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Create a command-line tool that displays useful system information.",
+    "concepts": [
+      "platform",
+      "os",
+      "functions",
+      "command-line applications"
+    ]
+  },
+  {
+    "challenge_id": "linux-002",
+    "technology": "linux",
+    "date": "2026-08-15",
+    "title": "Linux Process Investigation",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Investigate running processes using standard Linux commands.",
+    "concepts": [
+      "ps",
+      "top",
+      "grep",
+      "process management"
+    ]
+  },
+  {
+    "challenge_id": "javascript-001",
+    "technology": "javascript",
+    "date": "2026-08-26",
+    "title": "Remove Duplicate Values",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Create a JavaScript function that removes duplicate values from an array.",
+    "concepts": [
+      "arrays",
+      "functions",
+      "Set",
+      "ES6"
+    ],
+    "git_commit": "330d73b109b4b123f8d0b42f42c95cd9fcc44007"
+  }
 ]

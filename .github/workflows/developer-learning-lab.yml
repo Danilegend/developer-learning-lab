@@ -1,16 +1,22 @@
 name: Developer Learning Lab
 
 on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs automatically every day at 00:00 UTC
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
+  workflow_dispatch:      # Allows manually triggering the run from GitHub UI
 
 jobs:
-  validate:
+  daily-automation:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write     # Grants permission to push commits back to the repo
 
     steps:
       - name: Checkout repository
@@ -22,7 +28,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install test dependencies
-        run: python3 -m pip install -r requirements-dev.txt
+        run: |
+          if [ -f requirements-dev.txt ]; then
+            python3 -m pip install -r requirements-dev.txt
+          fi
 
       - name: Compile Python scripts
         run: |
@@ -35,16 +44,28 @@ jobs:
         run: git diff --check
 
       - name: Run tests
-        run: python3 -m pytest -v
+        run: |
+          if [ -d "tests" ]; then
+            python3 -m pytest -v
+          fi
 
       - name: Validate project data
         run: python3 scripts/validate_project.py
 
-      - name: Generate dashboard
-        run: python3 scripts/dashboard.py
+      - name: Generate daily challenge
+        run: python3 scripts/daily_challenge.py
+
+      - name: Complete daily challenge & update dashboard
+        run: python3 scripts/complete_challenge.py
 
       - name: Verify dashboard output
         run: |
           test -f dashboard/index.html
           test -s dashboard/index.html
           grep -q "Developer Learning Lab" dashboard/index.html
+
+      - name: Commit and push changes back to repository
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(daily): generate daily challenge and update dashboard [skip ci]"
+          branch: main

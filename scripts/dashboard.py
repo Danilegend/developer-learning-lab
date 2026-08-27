@@ -1329,7 +1329,7 @@ def generate_dashboard():
             </p>
         </div>
         """
-    # --------------------------------------------------
+  # --------------------------------------------------
     # Completion history
     # --------------------------------------------------
     # Build a lookup dictionary from challenges.json mapping challenge_id -> title
@@ -1341,10 +1341,16 @@ def generate_dashboard():
 
     completion_rows = []
 
-    for completion in reversed(completions):
-        c_id = completion.get("challenge_id") or completion.get("id", "")
+    # Sort by date newest first
+    sorted_completions = sorted(
+        completions, 
+        key=lambda x: x.get("date", ""), 
+        reverse=True
+    )
 
-        # Look up human-readable title; fall back to challenge_id if not found
+    # Limit display to only the 5 most recent completed challenges
+    for completion in sorted_completions[:5]:
+        c_id = completion.get("challenge_id") or completion.get("id", "")
         title = completion.get("title") or challenge_lookup.get(c_id) or c_id
 
         completion_rows.append(

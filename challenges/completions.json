@@ -18,5 +18,10 @@
     "challenge_id": "javascript-001",
     "technology": "javascript",
     "date": "2026-08-26"
+  },
+  {
+    "challenge_id": "networking-002",
+    "technology": "networking",
+    "date": "2026-08-27"
   }
 ]

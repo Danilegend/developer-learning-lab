@@ -59,5 +59,22 @@
       "ES6"
     ],
     "git_commit": "330d73b109b4b123f8d0b42f42c95cd9fcc44007"
+  },
+  {
+    "challenge_id": "networking-002",
+    "technology": "networking",
+    "date": "2026-08-27",
+    "title": "DNS Troubleshooting Lab",
+    "difficulty": "Intermediate",
+    "status": "completed",
+    "objective": "Investigate and troubleshoot common DNS resolution problems.",
+    "concepts": [
+      "DNS",
+      "nslookup",
+      "dig",
+      "resolv.conf",
+      "DNS records"
+    ],
+    "git_commit": null
   }
 ]

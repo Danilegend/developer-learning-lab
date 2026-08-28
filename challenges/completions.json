@@ -23,5 +23,10 @@
     "challenge_id": "networking-002",
     "technology": "networking",
     "date": "2026-08-27"
+  },
+  {
+    "challenge_id": "sql-001",
+    "technology": "sql",
+    "date": "2026-08-28"
   }
 ]

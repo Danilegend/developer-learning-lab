@@ -76,5 +76,21 @@
       "DNS records"
     ],
     "git_commit": null
+  },
+  {
+    "challenge_id": "sql-001",
+    "technology": "sql",
+    "date": "2026-08-28",
+    "title": "SQL JOIN Practice",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Practice retrieving related information from multiple database tables.",
+    "concepts": [
+      "SELECT",
+      "INNER JOIN",
+      "LEFT JOIN",
+      "WHERE"
+    ],
+    "git_commit": null
   }
 ]

@@ -92,5 +92,21 @@
       "WHERE"
     ],
     "git_commit": null
+  },
+  {
+    "challenge_id": "git-001",
+    "technology": "git",
+    "date": "2026-08-29",
+    "title": "Feature Branch Workflow",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Practice a complete Git feature branch workflow.",
+    "concepts": [
+      "branches",
+      "commits",
+      "merge",
+      "remote repositories"
+    ],
+    "git_commit": null
   }
 ]

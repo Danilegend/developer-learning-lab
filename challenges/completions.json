@@ -28,5 +28,10 @@
     "challenge_id": "sql-001",
     "technology": "sql",
     "date": "2026-08-28"
+  },
+  {
+    "challenge_id": "git-001",
+    "technology": "git",
+    "date": "2026-08-29"
   }
 ]

@@ -33,5 +33,10 @@
     "challenge_id": "git-001",
     "technology": "git",
     "date": "2026-08-29"
+  },
+  {
+    "challenge_id": "python-001",
+    "technology": "python",
+    "date": "2026-08-31"
   }
 ]

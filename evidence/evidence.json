@@ -108,5 +108,21 @@
       "remote repositories"
     ],
     "git_commit": null
+  },
+  {
+    "challenge_id": "python-001",
+    "technology": "python",
+    "date": "2026-08-31",
+    "title": "Python File Scanner",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Build a Python script that scans a directory and lists files larger than a specified size.",
+    "concepts": [
+      "pathlib",
+      "file handling",
+      "loops",
+      "functions"
+    ],
+    "git_commit": null
   }
 ]

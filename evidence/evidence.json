@@ -124,5 +124,21 @@
       "functions"
     ],
     "git_commit": null
+  },
+  {
+    "challenge_id": "javascript-002",
+    "technology": "javascript",
+    "date": "2026-09-02",
+    "title": "Async API Request",
+    "difficulty": "Intermediate",
+    "status": "completed",
+    "objective": "Create a JavaScript program that retrieves data from a public API.",
+    "concepts": [
+      "fetch",
+      "async/await",
+      "JSON",
+      "error handling"
+    ],
+    "git_commit": null
   }
 ]

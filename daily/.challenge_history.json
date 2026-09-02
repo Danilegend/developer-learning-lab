@@ -2,13 +2,12 @@
   "linux-002",
   "python-002",
   "linux-001",
-  "javascript-002",
   "networking-001",
   "git-002",
   "python-003",
-  "javascript-001",
   "networking-002",
   "sql-001",
   "git-001",
-  "python-001"
+  "python-001",
+  "javascript-002"
 ]

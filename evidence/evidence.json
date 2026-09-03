@@ -140,5 +140,21 @@
       "error handling"
     ],
     "git_commit": null
+  },
+  {
+    "challenge_id": "networking-001",
+    "technology": "networking",
+    "date": "2026-09-03",
+    "title": "Linux Network Investigation",
+    "difficulty": "Beginner",
+    "status": "completed",
+    "objective": "Use Linux networking tools to investigate the current network configuration.",
+    "concepts": [
+      "IP addresses",
+      "DNS",
+      "routing",
+      "network interfaces"
+    ],
+    "git_commit": null
   }
 ]

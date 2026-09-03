@@ -1,7 +1,7 @@
 {
   "current_level": 1,
   "level_name": "Foundation",
-  "total_challenges_completed": 9,
+  "total_challenges_completed": 10,
   "completed_challenges": [
     "linux-002",
     "linux-001",
@@ -11,7 +11,8 @@
     "sql-001",
     "git-001",
     "python-001",
-    "javascript-002"
+    "javascript-002",
+    "networking-001"
   ],
   "technologies": {
     "python": {
@@ -35,7 +36,7 @@
       "total": 1
     },
     "networking": {
-      "completed": 1,
+      "completed": 2,
       "total": 2
     },
     "react": {

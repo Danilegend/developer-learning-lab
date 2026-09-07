@@ -172,5 +172,21 @@
       "conflict resolution"
     ],
     "git_commit": null
+  },
+  {
+    "challenge_id": "python-003",
+    "technology": "python",
+    "date": "2026-09-07",
+    "title": "Python Log Analyzer",
+    "difficulty": "Intermediate",
+    "status": "completed",
+    "objective": "Create a script that analyzes a log file and counts different types of events.",
+    "concepts": [
+      "file processing",
+      "strings",
+      "dictionaries",
+      "error handling"
+    ],
+    "git_commit": null
   }
 ]

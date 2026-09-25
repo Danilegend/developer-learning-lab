@@ -1329,7 +1329,7 @@ def generate_dashboard():
             </p>
         </div>
         """
-  # --------------------------------------------------
+    # --------------------------------------------------
     # Completion history
     # --------------------------------------------------
     # Build a lookup dictionary from challenges.json mapping challenge_id -> title
@@ -1721,11 +1721,14 @@ th {{
 """
 
     # --------------------------------------------------
-    # Write dashboard
+    # Write dashboard (strip trailing whitespace per line)
     # --------------------------------------------------
 
+    # Remove trailing spaces from every line to keep CI happy
+    cleaned_html = "\n".join(line.rstrip() for line in html.splitlines())
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
-        file.write(html)
+        file.write(cleaned_html + "\n")
 
     print(f"✅ Dashboard generated: {OUTPUT_FILE}")
 

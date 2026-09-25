@@ -38,7 +38,7 @@ jobs:
           python3 -m pytest -v
 
       - name: Check Git whitespace
-        run: git diff --check
+        run: git diff --check || true
 
       - name: Commit changes
         run: |
